@@ -24,7 +24,7 @@ const Foooter = () => {
       <div>
         <img className="w-20  mt-5" src="portfoliologo.png" alt="" />
       </div>
-      <div className="flex flex-row mt-5 text-white gap-5  font-bold items-center justify-center">
+      <div className="flex flex-row mt-5 text-white sm:gap-5 gap-3 font-bold items-center justify-center">
         <Link to="/About">
           {" "}
           <h2 className=" hover:text-[white] hover:font-light">About me</h2>

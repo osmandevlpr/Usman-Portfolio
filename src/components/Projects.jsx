@@ -1,10 +1,149 @@
 import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(Timeline)
+
 
 const Projects = () => {
+  
+  const tl=gsap.timeline()
+  useGSAP(()=>{
+    gsap.from('.project',{
+      scrollTrigger:{
+        trigger:".project"
+        ,start:"top 100%",
+        // end:'top 60%',
+        // markers:true,
+        // scrub:true
+      },
+      opacity:0,
+      ease:"power1.inOut"
+      ,duration:1,
+      scale:0
+
+    })
+ 
+    tl.from('.img10',{
+      scrollTrigger:{
+        trigger:".img10"
+        ,start:"top 100%",
+        // end:'top 60%',
+        // markers:true,
+        // scrub:true
+      },
+      opacity:0,
+      ease:"power3.inOut"
+      ,duration:3,      scale:0
+
+
+    })
+    tl.from('.img20',{
+      scrollTrigger:{
+        trigger:".img20"
+        ,start:"top 100%",
+        // end:'top 60%',
+        // markers:true,
+        // scrub:true
+      },
+      opacity:0,
+      ease:"power1.inOut"
+      ,duration:3,      scale:0
+
+
+    })
+    tl.from('.img3',{
+      scrollTrigger:{
+        trigger:".img3"
+        ,start:"top 100%",
+        // end:'top 60%',
+        // markers:true,
+        // scrub:true
+      },
+      opacity:0,
+      ease:"power1.inOut"
+      ,duration:3,      scale:0
+
+
+    })
+    tl.from('.img4',{
+      scrollTrigger:{
+        trigger:".img4"
+        ,start:"top 100%",
+        // end:'top 60%',
+        // markers:true,
+        // scrub:true
+      },
+      opacity:0,
+      ease:"power1.inOut"
+      ,duration:3,      scale:0
+
+
+    })
+    tl.from('.img5',{
+      scrollTrigger:{
+        trigger:".img5"
+        ,start:"top 100%",
+        // end:'top 60%',
+        // markers:true,
+        // scrub:true
+      },
+      opacity:0,
+      ease:"power1.inOut"
+      ,duration:3,      scale:0
+
+
+    })
+    tl.from('.img6',{
+      scrollTrigger:{
+        trigger:".img6"
+        ,start:"top 100%",
+        // end:'top 60%',
+        // markers:true,
+        // scrub:true
+      },
+      opacity:0,
+      ease:"power1.inOut"
+      ,duration:3,      scale:0
+
+
+    })
+    tl.from('.img7',{
+      scrollTrigger:{
+        trigger:".img7"
+        ,start:"top 100%",
+        // end:'top 80%',
+        // markers:true,
+        // scrub:true
+      },
+      opacity:0,
+      ease:"power1.inOut"
+      ,duration:3,      scale:0
+
+
+    })
+    tl.from('.img8',{
+      scrollTrigger:{
+        trigger:".img8"
+        ,start:"top 100%",
+        // end:'top 80%',
+        // markers:true,
+        // scrub:true
+      },
+      opacity:0,
+      ease:"power1.inOut"
+      ,duration:5,      scale:0
+
+
+    })
+  })
   return (
     <div className=" text-white bg-gradient-to-t to-[#0F0715] mt-14   from-[#140C1C]">
-      <div className="flex justify-center items-center flex-col">
-        <h1 className="text-5xl font-extrabold bg-gradient-to-tr to-white from-[#6a47b0] text-transparent bg-clip-text mt-20">
+      <div className="project flex justify-center items-center flex-col">
+        <h1 className="sm:text-5xl  font-extrabold bg-gradient-to-tr to-white from-[#6a47b0] text-transparent bg-clip-text mt-20 text-3xl">
           My Recent Work
         </h1>
         <p className="md:w-[50%] w-[80%] text-center mt-4 font-thin">
@@ -13,7 +152,7 @@ const Projects = () => {
         </p>
       </div>
       <div className="grid md:grid-cols-2 p-3 md:px-24 py-8  gap-10 ">
-        <div className="w-[100%] rounded-t-xl   h-[280px] bg-[#140C1C] flex justify-center relative   imgblock">
+        <div className=" img10 w-[100%] rounded-t-xl   h-[280px] bg-[#140C1C] flex justify-center relative   imgblock">
           <img
             className="w-[96%] h-[260px] bottom-0 absolute"
             src="project2.png"
@@ -31,7 +170,7 @@ const Projects = () => {
             </p>
           </div>
         </div>
-        <div className="w-[100%] rounded-t-xl h-[280px]  bg-[#140C1C] flex justify-center relative   imgblock">
+        <div className=" img20 w-[100%] rounded-t-xl h-[280px]  bg-[#140C1C] flex justify-center relative   imgblock">
           <img
             className="w-[96%] h-[260px] bottom-0 absolute"
             src="project6.png"
@@ -49,7 +188,7 @@ const Projects = () => {
             </p>
           </div>
         </div>
-        <div className="w-[100%] rounded-t-xl h-[280px]  bg-[#140C1C] flex justify-center relative   imgblock">
+        <div className="img3 w-[100%] rounded-t-xl h-[280px]  bg-[#140C1C] flex justify-center relative   imgblock">
           <img
             className="w-[96%] h-[260px] bottom-0 absolute"
             src="project1.png"
@@ -68,7 +207,7 @@ const Projects = () => {
             </p>
           </div>
         </div>
-        <div className="w-[100%] rounded-t-xl h-[280px]  bg-[#140C1C] flex justify-center relative   imgblock">
+        <div className="img4 w-[100%] rounded-t-xl h-[280px]  bg-[#140C1C] flex justify-center relative   imgblock">
           <img
             className="w-[96%] h-[260px] bottom-0 absolute"
             src="project7.png"
@@ -87,7 +226,7 @@ const Projects = () => {
             </p>
           </div>
         </div>
-        <div className="w-[100%] rounded-t-xl h-[280px]  bg-black flex justify-center relative   imgblock">
+        <div className="img5 w-[100%] rounded-t-xl h-[280px]  bg-black flex justify-center relative   imgblock">
           <img
             className="w-[96%] h-[260px] bottom-0 absolute"
             src="project4.png"
@@ -107,7 +246,7 @@ const Projects = () => {
             </p>
           </div>
         </div>
-        <div className="w-[100%] rounded-t-xl h-[280px]  bg-black flex justify-center relative   imgblock">
+        <div className="img6 w-[100%] rounded-t-xl h-[280px]  bg-black flex justify-center relative   imgblock">
           <img
             className="w-[96%] h-[260px] bottom-0 absolute"
             src="project5.png"
@@ -127,7 +266,7 @@ const Projects = () => {
             </p>
           </div>
         </div>
-        <div className="w-[100%] rounded-t-xl h-[280px]  bg-black flex justify-center relative   imgblock">
+        <div className="img7 w-[100%] rounded-t-xl h-[280px]  bg-black flex justify-center relative   imgblock">
           <img
             className="w-[96%] h-[260px] bottom-0 absolute"
             src="project11.png"
@@ -147,7 +286,7 @@ const Projects = () => {
             </p>
           </div>
         </div>
-        <div className="w-[100%] rounded-t-xl h-[280px]  bg-black flex justify-center relative   imgblock">
+        <div className="img8 w-[100%] rounded-t-xl h-[280px]  bg-black flex justify-center relative   imgblock">
           <img
             className="w-[96%] h-[260px] bottom-0 absolute"
             src="project10.png"

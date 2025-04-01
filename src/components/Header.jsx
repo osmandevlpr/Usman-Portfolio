@@ -15,21 +15,38 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import { useGSAP } from '@gsap/react'
+import gsap from "gsap"
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 const Header = () => {
-//   const [isactive, setisactive] = useState(false)
-// const active=()=>{
-//   setisactive(true)
-// }
+  useGSAP(() => {
+   
+    
+    gsap.from(".lies h1",{
+      y:-300,
+      opacity:0,
+      top:200,
+      duration:1,
+stagger:-0.2
+    })
+   
+  });
+
+
+
   return (
-    <div id='header' className='fixed z-50 h-[13vh] top-0  flex justify-between items-center py-4 px-3 md:px-14 w-full  text-white bg-transparent  backdrop-blur-md  '>
+    <div id='header' className='head fixed z-50 h-[13vh] top-0  flex justify-between items-center py-4 px-3 md:px-14 w-full  text-white bg-transparent  backdrop-blur-md  '>
      
      <Link to="/"> 
      <img className='w-20 h-20 ml-0 mt-0' src="portfoliologo.png" alt="" />
      </Link> 
     
-      <div id='pli' className=" hidden  z-20 list md:flex gap-[30px] text-[15px]  font-bold  justify-center items-center">
-      <h1 id='li'><NavLink id='lii'  className={({isActive})=>(isActive?"text-[#764CC4] font-extrabold":"text-white")}   to="/" >Home</NavLink></h1>  
+      <div id='pli' className="lies hidden  z-20 list md:flex gap-[30px] text-[15px]  font-bold  justify-center items-center">
+      <h1 className='li' id='li'><NavLink id='lii'  className={({isActive})=>(isActive?"text-[#764CC4] font-extrabold":"text-white")}   to="/" >Home</NavLink></h1>  
       <h1 id='li'><NavLink  id='lii'  className={({isActive})=>(isActive?"text-[#764CC4] font-extrabold":"text-white")}   to="/About" >About me</NavLink></h1>  
         <h1 id='li'><NavLink id='lii' className={({isActive})=>(isActive?"text-[#764CC4] font-extrabold":"text-white")} to={"/Services"} >Services</NavLink></h1>
         <h1 id='li'><NavLink id='lii' className={({isActive})=>(isActive?"text-[#764CC4] font-extrabold":"text-white")} to={"/Skills"} >Skills</NavLink></h1>

@@ -1,8 +1,26 @@
 
+import { useGSAP } from '@gsap/react';
 import React, { useRef, useState } from 'react';
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger)
 const Contact = () => {
+  useGSAP(()=>{
+    gsap.from('.form',{
+      scrollTrigger:{
+        trigger:".form",
+start:"top 80%",
+markers:true,
+// scrub:true
+      },
+translateX:-400,
+opacity:0,
+      duration:1
+
+    })
+  })
   const [first, setfirst] = useState("");
   const [last, setlast] = useState("");
   const [email, setemail] = useState("");
@@ -66,34 +84,34 @@ const Contact = () => {
   return (
     <div className='w-full md:flex-row flex-col flex md:p-10 p-5 mt-28 md:mt-4'>
       <div className='text-white md:hidden ml-1 flex flex-col gap-5 justify-center ]'>
-<div className='flex gap-7  '>
+<div className='flex gap-3 sm:gap-7 '>
   <div className= 'rounded-[50px] w-12 h-12 bg-[#532F9C] items-center justify-center flex'><p className='w-3 h-3 border'></p></div>
   <div>
     <h1>Phone</h1>
-    <p className='text-2xl font-medium'>+92 319 713 5894</p>
+    <p className='font-medium'>+92 319 713 5894</p>
   </div>
 </div>
-<div className='flex gap-7'>
+<div className='flex gap-3 sm:gap-7'>
   <div className= 'rounded-[50px] w-12 h-12 bg-[#532F9C] items-center justify-center flex '><p className='w-3 h-3 border'></p></div>
   <div>
     <h1>Email</h1>
-    <p className='text-2xl font-medium'>usmandevlpr@gmail.com</p>
+    <p className='font-medium'>usmandevlpr@gmail.com</p>
   </div>
 </div>
-<div className='flex gap-7'>
+<div className='flex gap-3 sm:gap-7'>
   <div className='rounded-[50px] w-12 h-12 bg-[#532F9C] items-center justify-center flex'><p className='w-3 h-3 border'></p></div>
   <div>
     <h1>Address</h1>
-    <p className='text-2xl mt-2 font-medium'>57-A<br />Al-Faisal Town Lahore</p>
+    <p className=' mt-2 font-medium'>57-A<br />Al-Faisal Town Lahore</p>
   </div>
 </div>
 
   </div>  
-<div className='md:w-[50%] w-[100%] flex flex-col text-white bg-[#140C1C] p-5 md:p-10 rounded-2xl mt-18' >
-  <h1 className='text-4xl font-extrabold '>Let's work togethor</h1>
+<div className='form md:w-[50%] w-[100%] flex flex-col text-white bg-[#140C1C] p-4 md:p-10 rounded-2xl mt-18' >
+  <h1 className='sm:text-4xl text-3xl font-extrabold '>Let's work togethor</h1>
   <p className='font-light mt-1'>Let's collaborate and create something extraordinary together !</p>
-  <form action="">
-    <div className='grid grid-cols-2 gap-4 mt-7 text-center'>
+  <form className='' action="">
+    <div className='grid sm:grid-cols-2 gap-2 sm:gap-4 mt-7 text-center'>
       
       <div>
         <input required ref={firstref} value={first} onChange={(e)=>setfirst(e.target.value)} className='p-2 w-[100%] h-12 bg-black rounded-lg border-gray-700 border ' type="text" placeholder=" First Name" />

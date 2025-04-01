@@ -1,6 +1,27 @@
+import { useGSAP } from "@gsap/react";
 import React, { useEffect, useState, useRef } from "react";
+import gsap from 'gsap'
+import { Trigger } from "@radix-ui/react-dialog";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Number = () => {
+  useGSAP(()=>{
+    gsap.from('.number',{
+      scrollTrigger:{
+        trigger:".number"
+        ,start:"top 80%"
+        ,end:"top 60%"
+       
+        ,scrub:1
+      },
+      opacity:0,
+      duration:4,      scale:0
+
+
+    })
+  })
   const [projects, setProjects] = useState("70");
   const [completed, setCompleted] = useState("50");
   const [experience, setExperience] = useState("1");
@@ -49,32 +70,32 @@ const Number = () => {
   }, []);
 
   return (<>
-    <div className="flex justify-center w-screen   text-white number bg-gradient-to-t to-[#0F0715] from-black">
+    <div className="number flex justify-center w-screen   text-white number bg-gradient-to-t to-[#0F0715] from-black">
       <div
         ref={counterRef} // Attach the ref to the counter container
-        className="w-[90%]  flex justify-center md:gap-5 gap-3 items-center  mb-16 mt-17 md:mt-15 "
+        className="sm:w-[90%] w-[97%] flex justify-around md:gap-10  items-center  mb-5 mt-17 md:mt-15  gap-2"
       >
-        <div className="text-[#764CC4] rounded-lg w-[31%] md:w-[28%]  bg-white text-4xl flex flex-col justify-center items-center ">
-          <div className=" w-[100%] h-14 md:h-24 mt-5 md:text-7xl text-5xl text-center font-extrabold ">
+        <div className="text-[#764CC4] rounded-lg w-[35%]   bg-white  flex flex-col justify-center items-center md:gap-10 sm:gap-5  font-extrabold">
+          <div className=" w-[100%]   mt-5 md:text-7xl text-3xl text-center font-extrabold ">
             {projects}
           </div>
-          <div className="tracking-tight   w-[100%] h-[50%] text-center text-black md:font-extrabold font-bold text-[21px] md:text-4xl pb-2">
+          <div className="tracking-tight   w-[100%] h-[50%] text-center text-black md:font-extrabold font-bold  md:text-4xl pb-2 text-[6vw]">
             Projects
           </div>
         </div>
-        <div className="text-[#764CC4] rounded-lg w-[32%] md:w-[28%]  bg-white text-4xl flex flex-col justify-center items-center font-extrabold">
-          <div className=" w-[100%] h-14 md:h-24 mt-5 md:text-7xl text-5xl text-center font-extrabold">
+        <div className="text-[#764CC4] rounded-lg w-[35%]   bg-white  flex flex-col justify-center md:gap-10 items-center font-extrabold sm:gap-5 "  >
+          <div className=" w-[100%]   mt-5 md:text-7xl text-3xl text-center font-extrabold ">
             {completed}
           </div>
-          <div className="tracking-tight w-[100%] h-[50%] text-center text-black   md:font-extrabold font-bold text-[21px] md:text-4xl  pb-2">
+          <div className="tracking-tight w-[100%] h-[50%] text-center text-black   md:font-extrabold font-bold  md:text-4xl  pb-2 text-[6vw]">
             Completed
           </div>
         </div>
-        <div className="text-[#764CC4] rounded-lg w-[32%] md:w-[28%]  bg-white text-4xl flex flex-col justify-center items-center font-extrabold">
-          <div className=" w-[100%] h-14 md:h-24 mt-5 md:text-7xl text-5xl text-center font-extrabold">
+        <div className="text-[#764CC4] rounded-lg w-[35%]   bg-white  flex flex-col justify-center items-center font-extrabold md:gap-10 sm:gap-5 ">
+          <div className=" w-[100%]  mt-5 md:text-7xl text-3xl text-center font-extrabold">
             {experience}
           </div>
-          <div className="tracking-tight w-[100%] h-[50%] text-center text-black md:font-extrabold font-bold text-[21px] md:text-4xl  pb-2">
+          <div className="tracking-tight w-[100%] h-[50%] text-center text-black md:font-extrabold font-bold  md:text-4xl  pb-2 text-[6vw]">
             Experience
           </div>
         </div>
