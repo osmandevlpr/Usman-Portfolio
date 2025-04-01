@@ -22,33 +22,7 @@ const Services = () => {
 
     })
  
-    gsap.from('.p1',{
-      
-      opacity:0,
-      duration:3
-,scale:0
-    })
-    gsap.from('.p2',{
-      
-      opacity:0.1,
-      duration:4
-      ,scale:0
-
-    })
-    gsap.from('.p3',{
-     
-      opacity:0,
-      duration:5
-      ,scale:0
-
-    })
-    gsap.from('.p4',{
-      
-      opacity:0,
-      duration:6
-      ,scale:0
-
-    })
+   
   })
   return (
     <div className=" text-white md:p-0    mt-20 ">

@@ -16,9 +16,7 @@ const Projects = () => {
       scrollTrigger:{
         trigger:".project"
         ,start:"top 100%",
-        // end:'top 60%',
-        // markers:true,
-        // scrub:true
+        
       },
       opacity:0,
       ease:"power1.inOut"

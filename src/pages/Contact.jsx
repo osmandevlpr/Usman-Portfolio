@@ -11,9 +11,7 @@ const Contact = () => {
     gsap.from('.form',{
       scrollTrigger:{
         trigger:".form",
-start:"top 80%",
-markers:true,
-// scrub:true
+start:"top 80%"
       },
 translateX:-400,
 opacity:0,
